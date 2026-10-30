@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-cream-50 text-navy-900 font-sans antialiased;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4 {
+    line-height: 1.2;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-teal-500;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full rounded-lg border border-navy-900/15 bg-white px-3 py-2 text-navy-900 placeholder-navy-900/40 shadow-sm transition focus:border-teal-500 focus:ring-1 focus:ring-teal-500;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-teal-600 px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-teal-700 active:bg-teal-800 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-navy-900/15 bg-white px-4 py-2 font-medium text-navy-800 shadow-sm transition hover:bg-cream-100 active:bg-cream-200 disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md px-2 py-1 text-sm font-medium text-navy-600 transition hover:bg-navy-900/5 hover:text-navy-900;
+  }
+
+  .card {
+    @apply rounded-xl border border-navy-900/10 bg-white shadow-card;
+  }
+
+  .label-text {
+    @apply block text-sm font-medium text-navy-800;
+  }
+
+  .help-text {
+    @apply mt-1 text-xs text-navy-600/80 leading-relaxed;
+  }
+
+  .error-text {
+    @apply mt-1 text-xs text-error-600;
+  }
+
+  .section-heading {
+    @apply text-2xl font-semibold text-navy-900;
+  }
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(15, 31, 51, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 31, 51, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .card {
+    box-shadow: none !important;
+    border-color: #ccc !important;
+  }
+}
