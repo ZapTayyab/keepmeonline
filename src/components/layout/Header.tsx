@@ -25,8 +25,8 @@ export function Header({ currentRoute, navigate }: HeaderProps) {
   };
 
   return (
-    <header className="no-print sticky top-3 z-40 mx-auto max-w-6xl px-4 sm:px-6">
-      <div className="relative rounded-2xl border border-white/60 bg-white/70 px-4 py-2.5 shadow-lg shadow-navy-900/5 backdrop-blur-xl transition-all duration-300 hover:bg-white/80 hover:shadow-xl sm:px-6 sm:py-3">
+    <header className="no-print fixed top-3 left-0 right-0 z-40 mx-auto max-w-6xl px-4 pointer-events-none sm:px-6">
+      <div className="relative pointer-events-auto rounded-2xl border border-white/60 bg-white/70 px-4 py-2.5 shadow-lg shadow-navy-900/5 backdrop-blur-xl transition-all duration-300 hover:bg-white/80 hover:shadow-xl sm:px-6 sm:py-3">
         <div className="flex items-center justify-between">
           <button
             onClick={() => handleNav('/')}

@@ -24,7 +24,7 @@ export function PageLayout({
   children,
 }: PageHeaderProps & { children: React.ReactNode }) {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-3xl px-4 pt-24 pb-12 sm:px-6 sm:pt-28">
       <BackLink navigate={navigate} />
       <h1 className="mt-4 text-3xl font-bold tracking-tight text-navy-900">{title}</h1>
       {description && <p className="mt-3 text-lg text-navy-600">{description}</p>}

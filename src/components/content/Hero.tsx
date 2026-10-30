@@ -15,7 +15,7 @@ export function Hero({ onCalculate }: HeroProps) {
 
   const prefersReducedMotion = useRef(
     typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
   ).current;
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export function Hero({ onCalculate }: HeroProps) {
     <section className="relative overflow-hidden border-b border-navy-900/10 bg-cream-100">
       <HeroBackground reducedMotion={prefersReducedMotion} />
       <div className="bg-grid absolute inset-0 z-0 opacity-40" aria-hidden="true" />
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 pt-24 pb-14 sm:px-6 sm:pt-28 sm:pb-20">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
           {/* Left Column: Heading, Subheading & Calculate Button */}
           <div className="lg:col-span-7">
