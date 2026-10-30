@@ -69,27 +69,27 @@ export function Hero({ onCalculate }: HeroProps) {
           </div>
 
           {/* Right Column: Cascading Floating Blocks (2, 3, 4) */}
-          <div className="flex flex-col items-start lg:items-end gap-5 lg:col-span-5 lg:pr-4">
+          <div className="flex flex-wrap lg:flex-col items-center sm:items-start lg:items-end justify-start gap-3 sm:gap-4 lg:col-span-5 lg:pr-4">
             {/* 2: Free */}
             <div className="lg:mr-16 animate-float-slow">
-              <div className="inline-flex items-center gap-2 rounded-xl border border-teal-500/20 bg-white/95 px-5 py-2.5 shadow-soft backdrop-blur-md transition-all hover:scale-105 hover:border-teal-500/40">
+              <div className="inline-flex items-center gap-2 rounded-xl border border-teal-500/20 bg-white/95 px-4 py-2 sm:px-5 sm:py-2.5 shadow-soft backdrop-blur-md transition-all hover:scale-105 hover:border-teal-500/40">
                 <ShieldCheck className="h-4 w-4 text-teal-600" aria-hidden="true" />
-                <span className="text-sm font-semibold text-navy-900">Free</span>
+                <span className="text-xs sm:text-sm font-semibold text-navy-900">Free</span>
               </div>
             </div>
 
             {/* 3: No signup */}
             <div className="lg:mr-8 animate-float-delayed">
-              <div className="inline-flex items-center gap-2 rounded-xl border border-navy-900/10 bg-white/95 px-5 py-2.5 shadow-soft backdrop-blur-md transition-all hover:scale-105 hover:border-teal-500/40">
-                <span className="text-sm font-semibold text-navy-900">No signup</span>
+              <div className="inline-flex items-center gap-2 rounded-xl border border-navy-900/10 bg-white/95 px-4 py-2 sm:px-5 sm:py-2.5 shadow-soft backdrop-blur-md transition-all hover:scale-105 hover:border-teal-500/40">
+                <span className="text-xs sm:text-sm font-semibold text-navy-900">No signup</span>
               </div>
             </div>
 
             {/* 4: Your inputs stay in your browser */}
             <div className="animate-float-reverse">
-              <div className="inline-flex items-center gap-2 rounded-xl border border-navy-900/10 bg-white/95 px-5 py-2.5 shadow-soft backdrop-blur-md transition-all hover:scale-105 hover:border-teal-500/40">
+              <div className="inline-flex items-center gap-2 rounded-xl border border-navy-900/10 bg-white/95 px-4 py-2 sm:px-5 sm:py-2.5 shadow-soft backdrop-blur-md transition-all hover:scale-105 hover:border-teal-500/40">
                 <span className="h-2 w-2 rounded-full bg-teal-500" aria-hidden="true" />
-                <span className="text-sm font-semibold text-navy-900">Your inputs stay in your browser</span>
+                <span className="text-xs sm:text-sm font-semibold text-navy-900">Your inputs stay in your browser</span>
               </div>
             </div>
           </div>
