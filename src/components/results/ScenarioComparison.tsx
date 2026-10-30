@@ -31,7 +31,7 @@ export function ScenarioComparison({ input }: ScenarioComparisonProps) {
             key={t.key}
             type="button"
             onClick={() => setTab(t.key)}
-            className={`flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition ${
+            className={`flex-1 rounded-md px-2 py-1.5 text-xs sm:px-3 sm:text-sm font-medium transition text-center ${
               tab === t.key ? 'bg-white text-navy-900 shadow-sm' : 'text-navy-600 hover:text-navy-900'
             }`}
             aria-pressed={tab === t.key}

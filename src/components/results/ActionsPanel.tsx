@@ -35,15 +35,15 @@ export function ActionsPanel({ form, input, result }: ActionsPanelProps) {
 
   return (
     <div className="no-print space-y-3">
-      <div className="flex flex-wrap gap-2">
-        <button type="button" onClick={handleShareLink} className="btn-secondary text-sm">
-          <Share2 className="h-4 w-4" aria-hidden="true" /> Copy share link
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+        <button type="button" onClick={handleShareLink} className="btn-secondary text-sm justify-center">
+          <Share2 className="h-4 w-4 shrink-0" aria-hidden="true" /> Share link
         </button>
-        <button type="button" onClick={handleCopySummary} className="btn-secondary text-sm">
-          <Copy className="h-4 w-4" aria-hidden="true" /> Copy summary
+        <button type="button" onClick={handleCopySummary} className="btn-secondary text-sm justify-center">
+          <Copy className="h-4 w-4 shrink-0" aria-hidden="true" /> Copy summary
         </button>
-        <button type="button" onClick={() => window.print()} className="btn-secondary text-sm">
-          <Printer className="h-4 w-4" aria-hidden="true" /> Print summary
+        <button type="button" onClick={() => window.print()} className="btn-secondary text-sm justify-center">
+          <Printer className="h-4 w-4 shrink-0" aria-hidden="true" /> Print summary
         </button>
       </div>
 

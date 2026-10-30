@@ -141,51 +141,57 @@ function DeviceRow({ device, errors, updateForm, onDuplicate, onRemove }: Device
         device.enabled ? 'border-navy-900/10 bg-white' : 'border-navy-900/5 bg-cream-100/50 opacity-70'
       }`}
     >
-      <div className="flex items-center gap-2">
-        <input
-          type="checkbox"
-          className="h-4 w-4 rounded border-navy-900/30 text-teal-600"
-          checked={device.enabled}
-          onChange={(e) => patch({ enabled: e.target.checked })}
-          aria-label={`Enable ${device.name}`}
-        />
-        <input
-          type="text"
-          className="input-field flex-1 !py-1.5 !text-sm"
-          value={device.name}
-          maxLength={MAX_NAME_LENGTH}
-          onChange={(e) => patch({ name: e.target.value })}
-          aria-label="Device name"
-          aria-invalid={!!e('name')}
-        />
-        <label className="flex items-center gap-1 text-xs text-navy-700">
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="flex items-center gap-2 flex-1 min-w-[200px]">
           <input
             type="checkbox"
-            className="h-3.5 w-3.5 rounded border-navy-900/30 text-teal-600"
-            checked={device.essential}
-            onChange={(e) => patch({ essential: e.target.checked })}
+            className="h-4 w-4 shrink-0 rounded border-navy-900/30 text-teal-600 focus:ring-teal-500"
+            checked={device.enabled}
+            onChange={(e) => patch({ enabled: e.target.checked })}
+            aria-label={`Enable ${device.name}`}
           />
-          Essential
-        </label>
-        <button
-          type="button"
-          onClick={onDuplicate}
-          className="btn-ghost text-xs"
-          aria-label={`Duplicate ${device.name}`}
-        >
-          <Copy className="h-3.5 w-3.5" aria-hidden="true" />
-        </button>
-        <button
-          type="button"
-          onClick={onRemove}
-          className="btn-ghost text-xs text-error-600 hover:text-error-600"
-          aria-label={`Remove ${device.name}`}
-        >
-          <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
-        </button>
+          <input
+            type="text"
+            className="input-field flex-1 !py-1.5 !text-sm"
+            value={device.name}
+            maxLength={MAX_NAME_LENGTH}
+            onChange={(e) => patch({ name: e.target.value })}
+            aria-label="Device name"
+            aria-invalid={!!e('name')}
+          />
+        </div>
+        <div className="flex items-center gap-2 ml-auto">
+          <label className="flex items-center gap-1 text-xs text-navy-700 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              className="h-3.5 w-3.5 rounded border-navy-900/30 text-teal-600 focus:ring-teal-500"
+              checked={device.essential}
+              onChange={(e) => patch({ essential: e.target.checked })}
+            />
+            Essential
+          </label>
+          <button
+            type="button"
+            onClick={onDuplicate}
+            className="btn-ghost !p-1.5 text-xs text-navy-600 hover:text-navy-900"
+            aria-label={`Duplicate ${device.name}`}
+            title="Duplicate device"
+          >
+            <Copy className="h-3.5 w-3.5" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={onRemove}
+            className="btn-ghost !p-1.5 text-xs text-error-600 hover:bg-error-500/10 hover:text-error-700"
+            aria-label={`Remove ${device.name}`}
+            title="Remove device"
+          >
+            <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
+          </button>
+        </div>
       </div>
 
-      <div className="mt-2 grid grid-cols-4 gap-2">
+      <div className="mt-2.5 grid grid-cols-2 gap-2 sm:grid-cols-4">
         <div>
           <label className="text-[11px] font-medium text-navy-600">Watts</label>
           <input
@@ -223,14 +229,14 @@ function DeviceRow({ device, errors, updateForm, onDuplicate, onRemove }: Device
           {e('duty') && <p className="error-text">{e('duty')}</p>}
         </div>
         <div>
-          <label className="text-[11px] font-medium text-navy-600">Power</label>
+          <label className="text-[11px] font-medium text-navy-600">Power Path</label>
           <select
             className="input-field !py-1.5 !text-sm"
             value={device.path}
             onChange={(e) => patch({ path: e.target.value as PowerPath })}
           >
-            <option value="ac">AC</option>
-            <option value="dc">DC</option>
+            <option value="ac">AC (Inverter)</option>
+            <option value="dc">DC (Direct)</option>
           </select>
         </div>
       </div>
