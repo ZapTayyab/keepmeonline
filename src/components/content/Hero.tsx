@@ -58,15 +58,23 @@ export function Hero({ onCalculate }: HeroProps) {
           <p ref={subheadingRef} className="mt-4 text-lg text-navy-600">
             Estimate how long your router, laptop, and essentials can run&mdash;and discover what to switch off to last longer.
           </p>
-          <div ref={ctaRef} className="mt-6 flex flex-wrap items-center gap-4">
-            <button onClick={onCalculate} className="btn-primary text-base">
+          <div ref={ctaRef} className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
+            <button onClick={onCalculate} className="btn-primary text-base shadow-md hover:shadow-lg transition-all shrink-0">
               Calculate my backup
               <ArrowDown className="h-4 w-4" aria-hidden="true" />
             </button>
-            <span className="flex items-center gap-1.5 text-sm text-navy-600">
-              <ShieldCheck className="h-4 w-4 text-teal-600" aria-hidden="true" />
-              Free. No signup. Your inputs stay in your browser.
-            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-teal-200/80 bg-white/90 px-3 py-1.5 text-xs font-semibold text-teal-800 shadow-xs backdrop-blur-sm transition-transform hover:scale-105 animate-float-slow">
+                <ShieldCheck className="h-3.5 w-3.5 text-teal-600 shrink-0" aria-hidden="true" />
+                Free
+              </span>
+              <span className="inline-flex items-center rounded-full border border-teal-200/80 bg-white/90 px-3 py-1.5 text-xs font-medium text-navy-700 shadow-xs backdrop-blur-sm transition-transform hover:scale-105 animate-float-delayed">
+                No signup
+              </span>
+              <span className="inline-flex items-center rounded-full border border-teal-200/80 bg-white/90 px-3 py-1.5 text-xs font-medium text-navy-700 shadow-xs backdrop-blur-sm transition-transform hover:scale-105 animate-float-reverse">
+                Your inputs stay in your browser
+              </span>
+            </div>
           </div>
         </div>
       </div>
