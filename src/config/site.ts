@@ -5,8 +5,8 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  productionUrl: null,
-  contactEmail: null,
+  productionUrl: 'https://keepmeonline.org',
+  contactEmail: 'zammer.productions01@gmail.com',
   adsEnabled: false,
 };
 

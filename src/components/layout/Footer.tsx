@@ -1,4 +1,4 @@
-import { Zap } from 'lucide-react';
+import { Zap, Mail } from 'lucide-react';
 import type { Route } from '@/lib/router';
 
 interface FooterProps {
@@ -22,13 +22,26 @@ export function Footer({ navigate }: FooterProps) {
               <li><button onClick={() => navigate('/blog')} className="text-navy-600 hover:text-teal-700">Blog</button></li>
               <li><button onClick={() => navigate('/about')} className="text-navy-600 hover:text-teal-700">About</button></li>
               <li><button onClick={() => navigate('/privacy')} className="text-navy-600 hover:text-teal-700">Privacy</button></li>
+              <li><button onClick={() => navigate('/terms')} className="text-navy-600 hover:text-teal-700">Terms</button></li>
               <li><button onClick={() => navigate('/contact')} className="text-navy-600 hover:text-teal-700">Contact</button></li>
             </ul>
           </nav>
         </div>
-        <p className="mt-4 text-xs text-navy-600/70">
-          Planning estimate only. Actual runtime varies with battery condition, temperature, discharge rate, and equipment limits. Check manufacturer runtime charts where available.
-        </p>
+        <div className="mt-4 flex flex-col gap-2 border-t border-navy-900/5 pt-4 sm:flex-row sm:items-center sm:justify-between text-xs text-navy-600/70">
+          <p>
+            Planning estimate only. Actual runtime varies with battery condition, temperature, discharge rate, and equipment limits.
+          </p>
+          <div className="flex items-center gap-1 shrink-0">
+            <span>Business Inquiries:</span>
+            <a
+              href="mailto:zammer.productions01@gmail.com"
+              className="font-medium text-teal-700 hover:text-teal-800 underline inline-flex items-center gap-1"
+            >
+              <Mail className="h-3.5 w-3.5" aria-hidden="true" />
+              zammer.productions01@gmail.com
+            </a>
+          </div>
+        </div>
         <p className="mt-2 text-xs text-navy-600/60">© {year} Keep Me Online.</p>
       </div>
     </footer>

@@ -5,10 +5,12 @@ import { Footer } from '@/components/layout/Footer';
 import { HomePage } from '@/pages/HomePage';
 import { AboutPage } from '@/pages/AboutPage';
 import { PrivacyPage } from '@/pages/PrivacyPage';
+import { TermsPage } from '@/pages/TermsPage';
 import { ContactPage } from '@/pages/ContactPage';
 import { BlogListPage } from '@/pages/BlogListPage';
 import { BlogPostPage } from '@/pages/BlogPostPage';
 import { BLOG_POSTS, type BlogPost } from '@/data/blogPosts';
+import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 
 function App() {
   const [routeState, navigate] = useRouter();
@@ -57,9 +59,11 @@ function App() {
         )}
         {route === '/about' && <AboutPage navigate={navigate} />}
         {route === '/privacy' && <PrivacyPage navigate={navigate} />}
+        {route === '/terms' && <TermsPage navigate={navigate} />}
         {route === '/contact' && <ContactPage navigate={navigate} />}
       </div>
       <Footer navigate={navigate} />
+      <CookieConsentBanner navigate={navigate} />
     </div>
   );
 }

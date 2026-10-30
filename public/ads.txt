@@ -1,0 +1,8 @@
+# Google AdSense (Replace pub-XXXXXXXXXXXXXXXX with your actual publisher ID)
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# PropellerAds (PropellerAds verification line if required by their platform)
+# propellerads.com, XXXXXX, DIRECT
+
+# Adsterra (Adsterra verification / ads.txt line if required by their platform)
+# adsterra.com, XXXXXX, DIRECT

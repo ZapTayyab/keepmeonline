@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export type Route = '/' | '/about' | '/privacy' | '/contact' | '/blog' | '/blog/post';
+export type Route = '/' | '/about' | '/privacy' | '/terms' | '/contact' | '/blog' | '/blog/post';
 
 export interface RouteState {
   route: Route;
@@ -11,6 +11,7 @@ function parseRoute(hash: string): RouteState {
   const path = hash.replace(/^#/, '').split('?')[0];
   if (path === '/about') return { route: '/about', blogSlug: null };
   if (path === '/privacy') return { route: '/privacy', blogSlug: null };
+  if (path === '/terms') return { route: '/terms', blogSlug: null };
   if (path === '/contact') return { route: '/contact', blogSlug: null };
   if (path === '/blog') return { route: '/blog', blogSlug: null };
   if (path.startsWith('/blog/')) {
