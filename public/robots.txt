@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://keepmeonline.org/sitemap.xml
+Sitemap: https://www.keepmeonline.site/sitemap.xml
